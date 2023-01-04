@@ -1,0 +1,8 @@
+require("ui.bufferline")
+require("ui.gitsigns")
+require("ui.lualine")
+require("ui.web-devicons")
+require("ui.nvim-tree")
+require("ui.telescope")
+require("ui.nvim-cursorline")
+require("ui.hlslens")
