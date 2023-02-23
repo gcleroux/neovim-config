@@ -1,13 +1,16 @@
 # neovim-config
 
-My reproducible neovim configuration
+🚧 **This is a WIP, and should be treated as such. It might not work at all on
+your machine!** 🚧
+
+My reproducible neovim configuration.
 
 ## Build prerequisites
 
 ### Debian
 
 ```bash
-sudo apt install curl g++ gcc git ripgrep tar npm
+sudo apt install curl g++ gcc git ripgrep tar npm fd-find
 ```
 
 This neovim configuration also requires a Nerd Font to be installed on your
