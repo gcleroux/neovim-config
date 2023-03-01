@@ -31,6 +31,10 @@ null_ls.setup({
         }),
         diagnostics.cpplint,
 
+        -- Go tools
+        diagnostics.golangci_lint,
+        formatting.goimports,
+
         -- Markdown tools
         formatting.markdown_toc,
         formatting.cbfmt,

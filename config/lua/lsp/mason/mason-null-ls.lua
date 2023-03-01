@@ -9,6 +9,7 @@ mason_null_ls.setup({
         "codespell",
         "cpplint",
         "flake8",
+        "golangci_lint",
         "hadolint",
         "luacheck",
         "markdownlint",
@@ -18,6 +19,7 @@ mason_null_ls.setup({
         -- Formatting
         "black",
         "clang-format",
+        "goimports",
         "isort",
         "prettierd",
         "shfmt",

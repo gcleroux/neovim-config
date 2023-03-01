@@ -69,6 +69,11 @@ lspconfig.yamlls.setup({
         },
     },
 })
+-- GO LSP
+lspconfig.gopls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
 -- CPP LSP
 lspconfig.clangd.setup({
     on_attach = on_attach,

@@ -8,6 +8,7 @@ mason_lsp.setup({
         "bashls",
         "clangd",
         "dockerls",
+        "gopls",
         "html",
         "jedi_language_server",
         "jsonls",
