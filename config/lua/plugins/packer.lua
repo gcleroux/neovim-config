@@ -86,6 +86,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-path") -- path completions
     use("hrsh7th/cmp-cmdline") -- cmdline completions
     use("hrsh7th/cmp-nvim-lsp") -- LSP completions
+    use("hrsh7th/cmp-emoji") -- Emoji completions
     use("saadparwaiz1/cmp_luasnip")
 
     -- LSP
