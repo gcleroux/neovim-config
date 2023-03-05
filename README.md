@@ -13,6 +13,9 @@ My reproducible neovim configuration.
 sudo apt install curl g++ gcc git ripgrep tar npm fd-find
 ```
 
+This configuration requires the [GitHub CLI](https://github.com/cli/cli) tool to
+fully utilize all of its features.
+
 This neovim configuration also requires a Nerd Font to be installed on your
 system.  
 I recommend the `Cousine Nerd Font` font available [here](https://www.nerdfonts.com/font-downloads).

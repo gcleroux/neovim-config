@@ -27,7 +27,3 @@ require("plugins.markdown-preview")
 
 -- Wrap text in quotes, parentheses, etc.
 require("plugins.nvim-surround")
-
-require("plugins.gh")
-
-require("plugins.neoclip")

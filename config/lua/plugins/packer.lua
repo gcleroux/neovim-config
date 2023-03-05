@@ -100,8 +100,13 @@ return packer.startup(function(use)
     use("mfussenegger/nvim-dap")
 
     -- Telescope
-    use("nvim-telescope/telescope.nvim")
-    use("nvim-telescope/telescope-media-files.nvim")
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope-media-files.nvim" },
+        },
+    })
     use({
         "AckslD/nvim-neoclip.lua",
         requires = {
@@ -141,10 +146,16 @@ return packer.startup(function(use)
     use("mg979/vim-visual-multi") -- Atom multi cursor in vim
 
     -- use("lukas-reineke/indent-blankline.nvim")
-
     use({
-        "ldelossa/gh.nvim",
-        requires = { { "ldelossa/litee.nvim" } },
+        "pwntester/octo.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "kyazdani42/nvim-web-devicons",
+        },
+        config = function()
+            require("octo").setup()
+        end,
     })
 
     -- install without yarn or npm
