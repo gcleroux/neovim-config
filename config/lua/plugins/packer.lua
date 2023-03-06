@@ -170,8 +170,6 @@ return packer.startup(function(use)
         "jghauser/follow-md-links.nvim",
     })
 
-    use({ "kevinhwang91/nvim-hlslens" })
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
