@@ -145,7 +145,7 @@ return packer.startup(function(use)
     use("yamatsum/nvim-cursorline")
     -- Atom like multiple cursors
     use("mg979/vim-visual-multi") -- Atom multi cursor in vim
-
+    use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
     -- use("lukas-reineke/indent-blankline.nvim")
     use({
         "pwntester/octo.nvim",

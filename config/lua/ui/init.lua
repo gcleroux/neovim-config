@@ -24,3 +24,5 @@ require("ui.nvim-cursorline")
 
 -- Better search highlighting
 require("ui.hlslens")
+-- Folding scope in buffer
+require("ui.nvim-ufo")

@@ -28,6 +28,10 @@ o.numberwidth = 4
 o.cursorline = true
 o.termguicolors = true
 o.showmode = false
+o.foldcolumn = "0"
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
 
 -- Window local options
 
