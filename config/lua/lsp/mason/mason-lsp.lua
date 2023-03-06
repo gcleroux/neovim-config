@@ -3,18 +3,8 @@ if not mason_status_ok then
     return
 end
 
+local servers = require("../lsp.servers").servers
+
 mason_lsp.setup({
-    ensure_installed = {
-        "bashls",
-        "clangd",
-        "dockerls",
-        "gopls",
-        "html",
-        "jedi_language_server",
-        "jsonls",
-        "marksman",
-        "lua_ls",
-        "taplo",
-        "yamlls",
-    },
+    ensure_installed = servers,
 })

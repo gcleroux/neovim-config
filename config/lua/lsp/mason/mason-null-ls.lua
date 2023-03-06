@@ -3,26 +3,8 @@ if not status_ok then
     return
 end
 
-mason_null_ls.setup({
-    ensure_installed = {
-        -- Linters
-        "codespell",
-        "cpplint",
-        "flake8",
-        "golangci_lint",
-        "hadolint",
-        "luacheck",
-        "markdownlint",
-        "pylint",
-        "shellcheck",
+local null_ls = require("../lsp.servers").null_ls
 
-        -- Formatting
-        "black",
-        "clang-format",
-        "goimports",
-        "isort",
-        "prettierd",
-        "shfmt",
-        "stylua",
-    },
+mason_null_ls.setup({
+    ensure_installed = null_ls,
 })
