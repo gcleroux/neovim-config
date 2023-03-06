@@ -94,7 +94,7 @@ keymap("n", "<leader>hb", ":Gitsigns prev_hunk<CR>")
 
 -- Pressing backspace in normal mode returns to previous opened file
 keymap("n", "<bs>", ":edit #<CR>")
-keymap("n", "<leader>L", "<cmd>noh<CR>")
+keymap("n", "<leader>L", ":noh<CR>")
 
 keymap("n", "<leader>x", ":lua require('telescope').extensions.neoclip.default()<CR>")
 
