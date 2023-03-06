@@ -1,6 +1,3 @@
--- Setting the leader key to spacebar
-vim.g.mapleader = " "
-
 -- Functional wrapper for mapping custom keybindings
 local function keymap(mode, lhs, rhs)
     local options = { noremap = true, silent = true }

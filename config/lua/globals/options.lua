@@ -2,8 +2,8 @@ local o = vim.o
 -- local wo = vim.wo
 -- local bo = vim.bo
 
--- Set the leader key
-vim.g.mapleader = ";"
+-- Set the leader key to spacebar
+vim.g.mapleader = " "
 
 -- Disabling netrw at init (strong advised by nvim-tree)
 vim.g.loaded_netrw = 1
