@@ -5,8 +5,8 @@ require("lsp.mason.mason")
 require("lsp.handlers").setup()
 
 -- Formatters and linters
-require("lsp.null-ls") -- Must be loaded before mason-null-ls
 require("lsp.mason.mason-null-ls")
+require("lsp.null-ls") -- Must be loaded after mason-null-ls
 
 -- LSP config
 require("lsp.mason.mason-lsp")
