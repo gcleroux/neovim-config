@@ -97,11 +97,3 @@ keymap("n", "<bs>", ":edit #<CR>")
 keymap("n", "<leader>L", ":noh<CR>")
 
 keymap("n", "<leader>x", ":lua require('telescope').extensions.neoclip.default()<CR>")
-
--- Terminal --
--- Better terminal navigation (Not using this plugin anymore, maybe should be removed at some point)
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h")
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j")
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k")
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l")
--- keymap("n", "<leader>`", ":ToggleTermToggleAll<CR>")

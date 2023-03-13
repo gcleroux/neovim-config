@@ -30,7 +30,7 @@ o.termguicolors = true
 o.showmode = false
 o.foldcolumn = "0"
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-o.foldlevelstart = 99
+o.foldlevelstart = 99 -- Starting at foldlevel 99 makes all code visible (unfolded)
 o.foldenable = true
 
 -- Window local options
