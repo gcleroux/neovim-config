@@ -84,7 +84,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { "i", "s" }), -- If cmp not visible, fallback to Enter
+        end, { "i", "s" }),           -- If cmp not visible, fallback to Enter
 
         ["<C-a>"] = cmp.mapping.complete(), -- Every cmp entry
         ["<C-e>"] = cmp.mapping.abort(),
@@ -101,6 +101,7 @@ cmp.setup({
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
+                copilot = "[Copilot]",
                 buffer = "[Buffer]",
                 path = "[Path]",
                 emoji = "", -- No need for emoji menu identifier
@@ -111,11 +112,15 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "copilot" },
         { name = "buffer" },
         { name = "path" },
         { name = "emoji" },
     },
     windowdocumentation = {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+    experimental = {
+        ghost_text = false,
     },
 })

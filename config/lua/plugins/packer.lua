@@ -88,6 +88,14 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp") -- LSP completions
     use("hrsh7th/cmp-emoji") -- Emoji completions
     use("saadparwaiz1/cmp_luasnip")
+    use("zbirenbaum/copilot.lua")
+    use({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    })
 
     -- LSP
     use("williamboman/mason.nvim")        -- LSP plugin manager
@@ -143,6 +151,12 @@ return packer.startup(function(use)
     use("terrortylor/nvim-comment") -- IDE like line commenting with shortcut
 
     use("yamatsum/nvim-cursorline")
+    use({
+        "ggandor/leap.nvim",
+        config = function()
+            require("leap").add_default_mappings()
+        end,
+    })
     -- Atom like multiple cursors
     use("mg979/vim-visual-multi") -- Atom multi cursor in vim
     use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
