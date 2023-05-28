@@ -8,6 +8,9 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+-- Using shared capabilities from handlers
+local on_attach = require("lsp.handlers").on_attach
+
 null_ls.setup({
     debug = true,
     sources = {
@@ -52,16 +55,5 @@ null_ls.setup({
         diagnostics.yamllint,
     },
     -- you can reuse a shared lspconfig on_attach callback here
-    on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                end,
-            })
-        end
-    end,
+    on_attach = on_attach,
 })
