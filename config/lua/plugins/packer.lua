@@ -123,6 +123,8 @@ return packer.startup(function(use)
         },
     })
 
+    use("numToStr/FTerm.nvim")
+
     -- CSV highlighting
     use("mechatroner/rainbow_csv")
 

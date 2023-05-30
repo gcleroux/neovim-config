@@ -13,6 +13,9 @@ require("ui.web-devicons")
 -- In-window file tree
 require("ui.nvim-tree")
 
+-- Terminal
+require("ui.fterm")
+
 -- Telescope
 require("ui.telescope")
 

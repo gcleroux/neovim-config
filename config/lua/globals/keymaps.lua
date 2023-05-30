@@ -83,6 +83,10 @@ keymap("n", "<leader>lp", ",<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.f
 keymap("n", "<leader>dbg", "<cmd>lua require'dap'.repl.open()<CR>")
 keymap("n", "<leader>rl", "<cmd>lua require'dap'.run_last()<CR>")
 
+-- Terminal keymaps
+keymap("n", "<leader>`", '<CMD>lua require("FTerm").toggle()<CR>')
+keymap("t", "<leader>`", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
 -- LazyGit
 keymap("n", "<leader>gg", ":LazyGit<CR>")
 
