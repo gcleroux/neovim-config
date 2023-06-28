@@ -123,6 +123,7 @@ return packer.startup(function(use)
         },
     })
 
+    -- Terminal
     use("numToStr/FTerm.nvim")
 
     -- CSV highlighting
@@ -173,6 +174,20 @@ return packer.startup(function(use)
         config = function()
             require("octo").setup()
         end,
+    })
+    use({
+        "rawnly/gist.nvim",
+        config = function()
+            require("gist").setup()
+        end,
+        -- `GistsList` opens the selected gif in a terminal buffer,
+        -- this plugin uses neovim remote rpc functionality to open the gist in an actual buffer and not have buffer inception
+        requires = {
+            "samjwill/nvim-unception",
+            setup = function()
+                vim.g.unception_block_while_host_edits = true
+            end,
+        },
     })
 
     -- install without yarn or npm
