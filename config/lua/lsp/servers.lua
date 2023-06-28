@@ -10,6 +10,7 @@ LSP.servers = {
     "jedi_language_server",
     "jsonls",
     "marksman",
+    "nil_ls",
     "lua_ls",
     "taplo",
     "yamlls",
