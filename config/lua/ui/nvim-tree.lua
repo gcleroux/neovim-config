@@ -10,9 +10,9 @@ nvim_tree.setup({
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },
-                { key = "h", action = "split" },
+                { key = "H", action = "split" },
                 { key = "C", action = "cd" },
-                { key = "v", action = "vsplit" },
+                { key = "V", action = "vsplit" },
                 { key = ".", action = "toggle_dotfiles" },
                 { key = "i", action = "toggle_ignored" },
             },
