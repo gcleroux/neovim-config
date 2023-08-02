@@ -3,10 +3,20 @@ if not status_ok then
     return
 end
 
+local lsp_status_ok, lsp = pcall(require, "lsp-zero")
+if not lsp_status_ok then
+    vim.notify("Plugin lsp-zero is missing")
+    return
+end
+
 -- Use share on_attach/capabilities from handlers file
 local on_attach = require("lsp.handlers").on_attach
 local capabilities = require("lsp.handlers").capabilities
 local LSP = require("lsp.servers")
+
+lsp.preset({})
+
+lsp.setup_servers(LSP.servers)
 
 for _, server in ipairs(LSP.servers) do
     if LSP[server] then
@@ -24,3 +34,5 @@ for _, server in ipairs(LSP.servers) do
         })
     end
 end
+
+lsp.setup()

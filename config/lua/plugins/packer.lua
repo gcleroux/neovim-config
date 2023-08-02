@@ -98,12 +98,13 @@ return packer.startup(function(use)
     })
 
     -- LSP
-    use("williamboman/mason.nvim")        -- LSP plugin manager
-    use("williamboman/mason-lspconfig.nvim") -- Integrates Mason with Nvim built-in LSP
+    use({
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v2.x",
+    })
     use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-    use("jayp0521/mason-null-ls.nvim")    -- Integrates Mason with Null-ls
-    use("neovim/nvim-lspconfig")          -- enable LSP
-    use("b0o/schemastore.nvim")           -- jsonls schemas for LSP server
+    use("neovim/nvim-lspconfig")        -- enable LSP
+    use("b0o/schemastore.nvim")         -- jsonls schemas for LSP server
 
     -- Debugger
     use("mfussenegger/nvim-dap")

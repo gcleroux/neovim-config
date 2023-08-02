@@ -16,28 +16,6 @@ LSP.servers = {
     "yamlls",
 }
 
-LSP.null_ls = {
-    -- Linters
-    "codespell",
-    "cpplint",
-    "flake8",
-    "golangci_lint",
-    "hadolint",
-    "luacheck",
-    "markdownlint",
-    "pylint",
-    "shellcheck",
-
-    -- Formatting
-    "black",
-    "clang-format",
-    "goimports",
-    "isort",
-    "prettierd",
-    "shfmt",
-    "stylua",
-}
-
 -- Specific LSP settings (key must be LSP server name)
 -- ===================================================
 

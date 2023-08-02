@@ -7,6 +7,8 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
+local code_actions = null_ls.builtins.code_actions
 
 -- Using shared capabilities from handlers
 local on_attach = require("lsp.handlers").on_attach
@@ -37,6 +39,8 @@ null_ls.setup({
         -- Go tools
         diagnostics.golangci_lint,
         formatting.goimports,
+        code_actions.gomodifytags,
+        code_actions.impl,
 
         -- Markdown tools
         formatting.markdown_toc,
@@ -46,13 +50,20 @@ null_ls.setup({
         -- Shell tools
         formatting.shfmt.with({ extra_args = { "--indent", "4" } }), -- Tab to space
         diagnostics.shellcheck,
+        code_actions.shellcheck,
 
         -- Dockerfile tools
         diagnostics.hadolint,
 
         -- JS, TS, JSON, YAML, HTML, CSS, Mardown, etc. tools
-        formatting.prettierd,
+        formatting.prettier,
         diagnostics.yamllint,
+
+        -- Nix tools
+        formatting.nixfmt,
+        diagnostics.statix,
+        diagnostics.deadnix,
+        code_actions.statix,
     },
     -- you can reuse a shared lspconfig on_attach callback here
     on_attach = on_attach,
