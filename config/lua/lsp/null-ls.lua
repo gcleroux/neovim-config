@@ -43,7 +43,7 @@ null_ls.setup({
         code_actions.impl,
 
         -- Markdown tools
-        formatting.markdown_toc,
+        -- formatting.markdown_toc,     -- No native package in NixOS
         formatting.cbfmt,
         diagnostics.markdownlint,
 
