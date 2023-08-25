@@ -126,6 +126,12 @@ return packer.startup(function(use)
 
     -- Terminal
     use("numToStr/FTerm.nvim")
+    use({
+        "aserowy/tmux.nvim",
+        config = function()
+            return require("tmux").setup()
+        end,
+    })
 
     -- CSV highlighting
     use("mechatroner/rainbow_csv")
