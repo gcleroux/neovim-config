@@ -1,17 +1,19 @@
 local LSP = {}
+local CMD = {}
 
 LSP.servers = {
     "bashls",
     "clangd",
-    "dockerls",
     "docker_compose_language_service",
+    "dockerls",
     "gopls",
     "html",
     "jedi_language_server",
     "jsonls",
+    "lua_ls",
     "marksman",
     "nil_ls",
-    "lua_ls",
+    "quick_lint_js",
     "taplo",
     "yamlls",
 }
@@ -62,4 +64,11 @@ LSP.yamlls = {
     },
 }
 
-return LSP
+-- Specific CMD settings (key must be LSP server name)
+-- ===================================================
+CMD.jsonls = {
+    "vscode-json-languageserver",
+    "--stdio",
+}
+
+return { LSP = LSP, CMD = CMD }
