@@ -20,7 +20,8 @@ require("ui.fterm")
 require("ui.telescope")
 
 -- Telescope integration for clipboard management
-require("ui.neoclip")
+-- TODO: Fix errors when closing neoclip
+-- require("ui.neoclip")
 
 -- Cursor behaviour in buffer
 require("ui.nvim-cursorline")
