@@ -11,7 +11,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Global options
 o.relativenumber = true
-o.clipboard = "unnamedplus"
+o.clipboard = ""
 o.cmdheight = 2
 o.fileencoding = "utf-8"
 o.hlsearch = true
