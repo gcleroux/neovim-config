@@ -84,8 +84,8 @@ keymap("n", "<leader>dbg", "<cmd>lua require'dap'.repl.open()<CR>")
 keymap("n", "<leader>rl", "<cmd>lua require'dap'.run_last()<CR>")
 
 -- Terminal keymaps
-keymap("n", "<C-`>", '<CMD>lua require("FTerm").toggle()<CR>')
-keymap("t", "<C-`>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+keymap("n", "<C-t>", '<CMD>lua require("FTerm").toggle()<CR>')
+keymap("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
 -- LazyGit
 keymap("n", "<leader>gg", ":LazyGit<CR>")
