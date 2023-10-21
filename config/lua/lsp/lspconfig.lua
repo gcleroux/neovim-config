@@ -20,22 +20,12 @@ lsp.preset({})
 lsp.setup_servers(LSP.servers)
 
 for _, server in ipairs(LSP.servers) do
-    if LSP[server] then
-        -- Specific LSP config
-        lspconfig[server].setup({
-            cmd = CMD[server],
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = LSP[server],
-        })
-        -- end
-    else
-        -- Default config
-        lspconfig[server].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
-    end
+    lspconfig[server].setup({
+        cmd = CMD[server],
+        settings = LSP[server],
+        on_attach = on_attach,
+        capabilities = capabilities,
+    })
 end
 
 lsp.setup()

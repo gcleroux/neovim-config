@@ -67,7 +67,12 @@ LSP.yamlls = {
 -- Specific CMD settings (key must be LSP server name)
 -- ===================================================
 CMD.jsonls = {
-    "vscode-json-languageserver",
+    "json-languageserver",
+    "--stdio",
+}
+
+CMD.html = {
+    "html-languageserver",
     "--stdio",
 }
 
