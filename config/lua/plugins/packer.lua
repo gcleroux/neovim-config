@@ -158,7 +158,7 @@ return packer.startup(function(use)
     })
 
     -- Comments plugin to allow vscode like line commenting
-    use("terrortylor/nvim-comment") -- IDE like line commenting with shortcut
+    use("numToStr/Comment.nvim")
 
     use("yamatsum/nvim-cursorline")
     use({

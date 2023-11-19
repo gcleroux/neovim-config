@@ -1,8 +1,8 @@
--- Plugins config
-require("plugins")
-
 -- Setup global config
 require("globals")
+
+-- Plugins config
+require("plugins")
 
 -- Set up the colorscheme (comes before ui)
 require("themes.onenord")

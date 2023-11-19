@@ -14,7 +14,7 @@ require("plugins.treesitter")
 require("plugins.autopairs")
 
 -- Creates the comment shortcut <leader>/
-require("plugins.nvim-comment")
+require("plugins.comment")
 
 -- Atom like cursor
 require("plugins.vim-visual-cursor")
@@ -29,4 +29,4 @@ require("plugins.markdown-preview")
 require("plugins.nvim-surround")
 
 -- Copilot config
-require("plugins.copilot")
+-- require("plugins.copilot")

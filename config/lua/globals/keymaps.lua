@@ -51,10 +51,6 @@ keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>")
 -- Toggle file tree
 keymap("n", "<leader>\\", ":NvimTreeToggle<CR>")
 
--- Toggle comments
-keymap("n", "<leader>/", ":CommentToggle<CR>")
-keymap("v", "<leader>/", ":'<,'>CommentToggle<CR>")
-
 -- Generate docstring
 keymap("n", "<leader>doc", ":Neogen<CR>")
 
