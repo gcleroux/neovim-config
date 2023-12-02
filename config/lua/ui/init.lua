@@ -10,8 +10,7 @@ require("ui.lualine")
 -- Cool devicons integration
 require("ui.web-devicons")
 
--- In-window file tree
-require("ui.nvim-tree")
+require("ui.nnn")
 
 -- Terminal
 require("ui.fterm")

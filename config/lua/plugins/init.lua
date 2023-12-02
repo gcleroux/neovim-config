@@ -16,9 +16,6 @@ require("plugins.autopairs")
 -- Creates the comment shortcut <leader>/
 require("plugins.comment")
 
--- Atom like cursor
-require("plugins.vim-visual-cursor")
-
 -- Docstrings config
 require("plugins.neogen")
 

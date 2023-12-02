@@ -142,20 +142,7 @@ return packer.startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     })
 
-    -- Nvim tree
-    -- use({
-    --     "kyazdani42/nvim-tree.lua", -- File manager tree in nvim
-    --     requires = {
-    --         "kyazdani42/nvim-web-devicons", -- optional, for file icons
-    --     },
-    --     tag = "nightly",           -- optional, updated every week. (see issue #1193)
-    -- })
-    use({
-        "luukvbaal/nnn.nvim",
-        config = function()
-            require("nnn").setup()
-        end,
-    })
+    use("luukvbaal/nnn.nvim")
 
     -- Nvim surroung for easier bracket management
     use({
@@ -173,10 +160,7 @@ return packer.startup(function(use)
             require("leap").add_default_mappings()
         end,
     })
-    -- Atom like multiple cursors
-    use("mg979/vim-visual-multi") -- Atom multi cursor in vim
     use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-    -- use("lukas-reineke/indent-blankline.nvim")
     use({
         "pwntester/octo.nvim",
         requires = {
