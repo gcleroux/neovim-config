@@ -12,7 +12,7 @@ require("nnn").setup({
         width = 36,
         fullscreen = false,
     },
-    auto_close = true,
+    auto_close = false,
     replace_netrw = "picker",
     mappings = {
         { "<C-t>", builtin.open_in_tab },
@@ -24,8 +24,8 @@ require("nnn").setup({
         { "<C-e>", builtin.populate_cmdline },
     },
     windownav = {
-        left = "<S-h>",
-        right = "<S-l>",
+        left = "<C-w>h",
+        right = "<C-w>l",
         next = "<C-w>w",
         prev = "<C-w>W",
     },

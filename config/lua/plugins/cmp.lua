@@ -10,31 +10,31 @@ if not luasnip_status_ok then
 end
 
 local kind_icons = {
-  Text = "",
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰇽",
-  Variable = "󰂡",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "󰅲",
+    Text = "",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
+    Field = "󰇽",
+    Variable = "󰂡",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = "󰅲",
 }
 
 local has_words_before = function()
@@ -44,6 +44,9 @@ local has_words_before = function()
 end
 
 cmp.setup({
+    enabled = function()
+        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+    end,
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -94,11 +97,10 @@ cmp.setup({
     formatting = {
         format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+            vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
-                copilot = "[Copilot]",
                 buffer = "[Buffer]",
                 path = "[Path]",
                 emoji = "", -- No need for emoji menu identifier
@@ -106,10 +108,17 @@ cmp.setup({
             return vim_item
         end,
     },
+    filetype = {
+        { "dap-repl" },
+        { "dapui_watches" },
+        { "dapui_hover" },
+        sources = {
+            name = "dap",
+        },
+    },
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "copilot" },
         { name = "buffer" },
         { name = "path" },
         { name = "emoji" },

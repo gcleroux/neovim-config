@@ -41,11 +41,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv")
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- Telescope
-keymap(
-    "n",
-    "<leader>f",
-    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
-)
+keymap("n", "<leader>f", "<cmd>Telescope find_files<CR>")
 keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>")
 
 -- Toggle file tree (%:p:h opens at current buffer location)
@@ -57,12 +53,12 @@ keymap("n", "<leader>doc", ":Neogen<CR>")
 
 -- LSP keymaps
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+keymap("n", "gd", "<cmd>lua require'telescope.builtin'.lsp_definitions()<CR>")
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+keymap("n", "gi", "<cmd>lua require'telescope.builtin'lsp_implementations()<CR>")
 keymap("n", "<C-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>")
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 keymap("n", "<leader>dg", "<cmd>lua vim.diagnostic.open_float()<CR>")
 keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')

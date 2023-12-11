@@ -38,9 +38,11 @@ null_ls.setup({
 
         -- Go tools
         diagnostics.golangci_lint,
-        formatting.goimports,
-        code_actions.gomodifytags,
-        code_actions.impl,
+        -- Don't nee this since it is integrated in gopls
+        -- formatting.gofmt,
+        -- Replaced with gopher.nvim
+        -- code_actions.gomodifytags,
+        -- code_actions.impl,
 
         -- Markdown tools
         -- formatting.markdown_toc,     -- No native package in NixOS

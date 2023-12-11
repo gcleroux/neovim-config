@@ -21,6 +21,13 @@ LSP.servers = {
 -- Specific LSP settings (key must be LSP server name)
 -- ===================================================
 
+-- Go settings
+LSP.gopls = {
+    gopls = {
+        gofumpt = true,
+    },
+}
+
 -- Lua settings
 LSP.lua_ls = {
     Lua = {
@@ -58,7 +65,8 @@ LSP.jsonls = {
 LSP.yamlls = {
     yaml = {
         schemas = {
-            ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
+            ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] =
+            "conf/**/*catalog*",
             ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
         },
     },

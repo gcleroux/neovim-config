@@ -54,6 +54,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter", -- Neovim LSP server
         run = ":TSUpdate",
     })
+
     use("p00f/nvim-ts-rainbow")
 
     -- Docstrings generator
@@ -77,7 +78,10 @@ return packer.startup(function(use)
     use("lambdalisue/suda.vim") -- Open/write files as root
 
     -- snippets
-    use("L3MON4D3/LuaSnip")
+    use({
+        "L3MON4D3/LuaSnip",
+        requires = { "rafamadriz/friendly-snippets" },
+    })
     use("rafamadriz/friendly-snippets")
 
     -- cmp plugins
@@ -88,6 +92,14 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp") -- LSP completions
     use("hrsh7th/cmp-emoji") -- Emoji completions
     use("saadparwaiz1/cmp_luasnip")
+    use({
+        "rcarriga/cmp-dap",
+        requires = {
+            { "hrsh7th/nvim-cmp" },
+            { "mfussenegger/nvim-dap" },
+            { "rcarriga/nvim-dap-ui" },
+        },
+    })
     use("zbirenbaum/copilot.lua")
     use({
         "zbirenbaum/copilot-cmp",
@@ -95,6 +107,14 @@ return packer.startup(function(use)
         config = function()
             require("copilot_cmp").setup()
         end,
+    })
+    use({
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
     })
 
     -- LSP
@@ -108,6 +128,22 @@ return packer.startup(function(use)
 
     -- Debugger
     use("mfussenegger/nvim-dap")
+    use({
+        -- TODO: Configure dapui at some point
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("dapui").setup()
+        end,
+    })
+    use({
+        "theHamsta/nvim-dap-virtual-text",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("nvim-dap-virtual-text").setup()
+        end,
+    })
+    -- use("leoluz/nvim-dap-go")
 
     -- Telescope
     use({
@@ -155,9 +191,9 @@ return packer.startup(function(use)
 
     use("yamatsum/nvim-cursorline")
     use({
-        "ggandor/leap.nvim",
+        "folke/flash.nvim",
         config = function()
-            require("leap").add_default_mappings()
+            require("flash").setup()
         end,
     })
     use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
@@ -187,13 +223,19 @@ return packer.startup(function(use)
         },
     })
 
-    -- install without yarn or npm
-    use({
-        "iamcco/markdown-preview.nvim", -- Preview markdown files in web browser
-        run = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    })
+    -- Using nixOS vimPlugins instead
+    -- use({
+    --     "iamcco/markdown-preview.nvim", -- Preview markdown files in web browser
+    --     run = "cd app && npm install",
+    --     setup = function()
+    --         vim.g.mkdp_filetypes = { "markdown" }
+    --         vim.g.mkdp_browser = { "/home/guillaume/.nix-profile/bin/chromium-browser" }
+    --     end,
+    --     ft = { "markdown" },
+    --     -- run = function()
+    --     --     vim.fn["mkdp#util#install"]()
+    --     -- end,
+    -- })
     use({
         "jghauser/follow-md-links.nvim",
     })
